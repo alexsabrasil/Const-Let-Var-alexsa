@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Funções JavaScript</title>
+  <style>
+    /* Estilos CSS para formatar a saída */
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+    }
+    .output {
+    font-family: Arial, sans-serif;
+      font-size: 18px;
+      margin-bottom: 10px;
+      background-color: bisque;
+    }
+  </style>
+</head>
+<body>
+  <div class="output" id="resultado1"></div>
+  <div class="output" id="resultado2"></div>
+  <div class="output" id="resultado3"></div>
+  <div class="output" id="resultado4"></div>
+  <div class="output" id="resultado5"></div>
+  <div class="output" id="resultado6"></div>
+  <div class="output" id="resultado7"></div>
+  <div class="output" id="resultado8"></div>
+  <div class="output" id="resultado9"></div>
+  <div class="output" id="resultado10"></div>
+
+  <script>
+    // Defina suas funções JavaScript aqui
+
+    function dobrar(numero) {
+      return numero * 2;
+    }
+
+    const resultado1 = dobrar(5);
+
+    const resultado2 = (function(numero) {
+      return numero * 2;
+    })(7);
+
+    const resultado3 = ((numero) => numero * 2)(3);
+
+    const saudacao = (nome) => `Olá, ${nome}!`;
+
+    const resultado4 = saudacao("João");
+
+    function saudacaoTradicional(nome) {
+      return "Olá, " + nome + "!";
+    }
+
+    const resultado5 = saudacaoTradicional("Maria");
+
+    function somarNumeros() {
+      let soma = 0;
+      for (let i = 0; i < arguments.length; i++) {
+        soma += arguments[i];
+      }
+      return soma;
+    }
+
+    const resultado6 = somarNumeros(1, 2, 3, 4, 5);
+
+    const somarNumerosArrow = (...numeros) => numeros.reduce((acc, num) => acc + num, 0);
+
+    const resultado7 = somarNumerosArrow(1, 2, 3, 4, 5);
+
+    const resultado8 = saudacao("Ana");
+
+    function maiorNumero(num1, num2, num3) {
+      return Math.max(num1, num2, num3);
+    }
+
+    const resultado9 = maiorNumero(10, 5, 8);
+
+    function contarVogais(string) {
+      const vogais = 'aeiouAEIOU';
+      let count = 0;
+      for (let i = 0; i < string.length; i++) {
+        if (vogais.includes(string[i])) {
+          count++;
+        }
+      }
+      return count;
+    }
+
+    const resultado10 = contarVogais("Hello, World!");
+
+    document.getElementById("resultado1").textContent = `Resultado 1: ${resultado1}`;
+    document.getElementById("resultado2").textContent = `Resultado 2: ${resultado2}`;
+    document.getElementById("resultado3").textContent = `Resultado 3: ${resultado3}`;
+    document.getElementById("resultado4").textContent = `Resultado 4: ${resultado4}`;
+    document.getElementById("resultado5").textContent = `Resultado 5: ${resultado5}`;
+    document.getElementById("resultado6").textContent = `Resultado 6: ${resultado6}`;
+    document.getElementById("resultado7").textContent = `Resultado 7: ${resultado7}`;
+    document.getElementById("resultado8").textContent = `Resultado 8: ${resultado8}`;
+    document.getElementById("resultado9").textContent = `Resultado 9: ${resultado9}`;
+    document.getElementById("resultado10").textContent = `Resultado 10: ${resultado10}`;
+  </script>
+</body>
+</html>
